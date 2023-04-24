@@ -1,6 +1,7 @@
 const app = require("express")();
 const jobs = {}
 
+
 app.post("/submit", (req, res) =>  {
     const jobId = `job:${Date.now()}`
     jobs[jobId] = 0;
