@@ -4,7 +4,8 @@ connect();
 async function connect() {
 
     try {
-        const amqpServer = "amqp://localhost:5672"
+        // const amqpServer = "amqp://localhost:5672"
+        const amqpServer =  "amqps://pirdtnni:DoaUfJjVHAy0MtyAH56xDF6XrxnSJ1g6@jackal.rmq.cloudamqp.com/pirdtnni"
         const connection = await amqp.connect(amqpServer)
         const channel = await connection.createChannel();
         await channel.assertQueue("jobs");
@@ -15,7 +16,7 @@ async function connect() {
             //"7" == 7 true
             //"7" === 7 false
 
-            if (input.number == 7 ) 
+            if (input.number == 107 ) 
                 channel.ack(message);
         })
 
